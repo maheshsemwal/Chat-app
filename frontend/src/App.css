@@ -1,0 +1,6 @@
+.App{
+    min-width: 100vh;
+    display: flex;
+    background-color: rgb(2 6 23 / var(--tw-bg-opacity));
+    height: fit-content;
+}
