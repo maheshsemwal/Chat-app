@@ -1,0 +1,5 @@
+//change this file name to .env add change all the environment variable
+PORT = __PORT__
+MONGO_URI= YOUR_MONGO_URI
+JWT_SECRET= YOUR_JWT_SECRET
+NODE_ENV= production
