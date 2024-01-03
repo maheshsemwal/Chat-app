@@ -16,7 +16,8 @@ app.use(cors());
 app.use(express.json()); // to accept json data
 
 app.get("/", (req, res) => {
-  res.send("API Running!");
+  // res.send("API Running!");
+  res.redirect("/chats");
 });
 
 app.use("/api/user", userRoutes);
@@ -27,12 +28,13 @@ app.use("/api/message", messageRoutes);
 // --------------------------deployment------------------------------
 
 const __dirname1 = path.resolve();
+console.log("NODE_ENV:", process.env.NODE_ENV);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname1, "/frontend/build")));
-
+  
   app.get("*", (req, res) =>
-    res.sendFile(path.resolve(__dirname1, "frontend", "build", "index.html"))
+  res.sendFile(path.resolve(__dirname1, "frontend", "build", "index.html"))
   );
 } else {
   app.get("/", (req, res) => {
@@ -54,7 +56,7 @@ const server = app.listen(PORT, () => {
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "http://localhost:5000",
+    origin: "http://localhost:5000/",
     // credentials: true,
   },
 });
