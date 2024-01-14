@@ -7,6 +7,9 @@
     "start": "nodemon backend/server.js",
     "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
   },
+  "engines": {
+    "node": "20.9.0"
+  },
   "author": "Mahesh Semwal",
   "license": "ISC",
   "dependencies": {
