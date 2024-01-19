@@ -28,7 +28,7 @@ Make sure you have the following software installed on your machine:
    ```bash
    cd frontend
    npm install
-5. **Change the .envExample with .env by replcing your credential**
+5. **Change the .envExample with .env by replacing your credential**
 
 ## usage
 ```bash
